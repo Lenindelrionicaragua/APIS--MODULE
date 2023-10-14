@@ -40,22 +40,29 @@ function renderError(err) {
   errorElement.innerText = err;
 }
 
-function main() {
+async function main() {
   const button = document.querySelector('#button');
-  button.addEventListener('click', () => {
-    const option = document.querySelector('#option');
+  const pokemonsElement = document.querySelector(`#json`);
+  const errorElement = document.querySelector(`#error`);
+  const option = document.querySelector('#option');
+
+  button.addEventListener('click', async () => {
     const url = option.checked ? INVALID_URL : VALID_URL;
 
-    option.addEventListener('click', () => {
-      const pokemonsElement = document.querySelector(`#json`);
-      const errorElement = document.querySelector(`#error`);
+    try {
       pokemonsElement.innerText = '';
       errorElement.innerText = '';
-    });
 
-    fetchJSON(url)
-      .then(data => renderResults(data))
-      .catch(error => renderError(error.message));
+      const data = await fetchJSON(url);
+      renderResults(data);
+    } catch (error) {
+      renderError(error.message);
+    }
+  });
+
+  option.addEventListener('click', () => {
+    pokemonsElement.innerText = '';
+    errorElement.innerText = '';
   });
 }
 
