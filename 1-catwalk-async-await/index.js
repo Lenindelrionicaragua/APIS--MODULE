@@ -54,11 +54,3 @@ async function catWalk() {
 
 catWalk();
 window.addEventListener('load', catWalk);
-
-//Answer: In this case, I feel that both this version and the one from last week are easy to read, 
-//(It's true that we save on arrow functions, but even that part I feel was useful to clarity.)
-// and the use of "then" in this version might be a little clearer for me. Both versions are equally efficient. 
-//Async/await works similarly to promises, so this method doesn't block other functions from running, which is a fundamental feature of promises.
-
-//However, I understand that the objective of these new methods is to make the code clearer, 
-// so I suppose that the difference is almost imperceptible, at least for me, in this scenario.
