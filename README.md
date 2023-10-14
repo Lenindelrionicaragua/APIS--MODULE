@@ -10,3 +10,13 @@ Have a look [here](https://github.com/HackYourFuture/Assignments/tree/main/2-Bro
 - To make the code loop we cannot use a standard JavaScript loop (`for` or `while`). Why is that?
 - Do you feel this version is easier to read than the version you made in the Browsers module?
 - Is this version more efficient or not or does it not matter?
+
+- //Answer:
+
+//In this case, I feel that both this version and the one from last week are easy to read,
+//(It's true that we save on arrow functions, but even that part I feel was useful to clarity.)
+// and the use of "then" in this version might be a little clearer for me. Both versions are equally efficient.
+//Async/await works similarly to promises, so this method doesn't block other functions from running, which is a fundamental feature of promises.
+
+//However, I understand that the objective of these new methods is to make the code clearer,
+// so I suppose that the difference is almost imperceptible, at least for me, in this scenario.
